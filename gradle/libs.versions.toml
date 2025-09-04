@@ -9,6 +9,7 @@ lifecycle = "2.6.2"
 hilt = "2.48"
 room = "2.6.1"
 compose = "1.6.1"
+compose-bom = "2025.01.00"
 navigation = "2.7.3"
 datastore = "1.1.1"
 retrofit = "2.11.0"
@@ -39,6 +40,9 @@ compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", versi
 compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version = "1.8.2" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 
 # Lifecycle
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }

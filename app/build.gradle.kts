@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.rhymi"
+    namespace = "com.rhymi"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.rhymi"
+        applicationId = "com.rhymi"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -48,6 +48,9 @@ android {
 }
 
 dependencies {
+    // Import the BOM first
+    implementation(platform(libs.compose.bom))
+
     // Core + Material
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -55,10 +58,12 @@ dependencies {
 
     // Jetpack Compose
     implementation(libs.compose.ui)
+    implementation(libs.compose.foundation)
     implementation(libs.compose.material3)
     implementation(libs.activity.compose)
     implementation(libs.compose.preview)
     debugImplementation(libs.compose.ui.tooling)
+    debugImplementation(libs.compose.tooling)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.navigation.compose)
 
