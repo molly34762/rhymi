@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -21,10 +22,6 @@ android {
 
     buildFeatures {
         compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     kotlinOptions {
@@ -61,27 +58,34 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.activity.compose)
     implementation(libs.compose.preview)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.lifecycle.viewmodel.compose)
     debugImplementation(libs.compose.ui.tooling)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.navigation.compose)
+
+    // Lifecycle
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.viewmodel.compose)
+
+    // coroutines
+    implementation(libs.coroutines.android)
+    implementation(libs.coroutines.core)
 
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
-    implementation(libs.hilt.navigation.compose)
 
     // Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
 
-    // Unit Testing
-    testImplementation(libs.junit)
-    testImplementation(libs.mockito.core)
+    // DataStore
+    implementation(libs.datastore.preferences)
 
-    // Android Instrumented Testing
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    // retrofit
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
 }
 
 kapt {
