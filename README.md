@@ -27,5 +27,9 @@ cd rhymi
 # Make sure an emulator is running first
 ./gradlew installDebug && adb shell am start -n com.example.rhymi/.MainActivity
 ```
+### Run unit tests
+```bash
+./gradlew test
+```
 
 

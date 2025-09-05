@@ -75,6 +75,7 @@ dependencies {
     // coroutines
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
+    implementation(libs.coroutines.test)
 
     // Hilt
     implementation(libs.hilt.android)
@@ -91,6 +92,12 @@ dependencies {
     // retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+
+    // testing
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.mockito.kotlin)
 }
 
 kapt {
