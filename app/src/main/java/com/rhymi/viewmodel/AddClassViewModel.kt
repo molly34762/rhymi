@@ -2,8 +2,8 @@ package com.rhymi.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rhymi.domain.model.DanceClass
 import com.rhymi.service.repository.DanceClassRepository
-import com.rhymi.service.room.ClassEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -13,9 +13,9 @@ class AddClassViewModel @Inject constructor(
     private val danceClassRepository: DanceClassRepository
 ): ViewModel() {
 
-    fun saveDanceClass(classEntity: ClassEntity) {
+    fun saveDanceClass(danceClass: DanceClass) {
         viewModelScope.launch {
-            danceClassRepository.insertClass(classEntity)
+            danceClassRepository.insertClass(danceClass)
         }
     }
 }

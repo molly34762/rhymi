@@ -1,5 +1,7 @@
 package com.rhymi.service.repository
 
+import com.rhymi.domain.model.DanceClass
+import com.rhymi.service.mappers.toEntity
 import com.rhymi.service.room.ClassDao
 import com.rhymi.service.room.ClassEntity
 import javax.inject.Inject
@@ -13,7 +15,7 @@ class DanceClassRepository @Inject constructor (
         return classDao.getAllClasses()
     }
 
-    suspend fun insertClass(classEntity: ClassEntity) {
-        classDao.insertClass(classEntity)
+    suspend fun insertClass(danceClass: DanceClass) {
+        classDao.insertClass(danceClass.toEntity())
     }
 }

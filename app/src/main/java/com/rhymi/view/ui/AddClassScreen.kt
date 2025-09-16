@@ -50,7 +50,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.rhymi.service.room.ClassEntity
+import com.rhymi.domain.model.DanceClass
 import com.rhymi.utils.DateExtensions
 import com.rhymi.viewmodel.AddClassViewModel
 
@@ -140,7 +140,7 @@ fun AddClassScreen(
             SaveButton(
                 onClick = {
                     viewModel.saveDanceClass(
-                        classEntity = ClassEntity(
+                        danceClass = DanceClass(
                             date = selectedDate.value ?: 0L,
                             style = style,
                             teacherName = teacherName,
