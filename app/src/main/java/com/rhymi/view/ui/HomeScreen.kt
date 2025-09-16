@@ -1,5 +1,6 @@
 package com.rhymi.view.ui
 
+import android.text.format.DateUtils
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -35,8 +36,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.rhymi.Utility.convertMillisToDate
 import com.rhymi.service.room.ClassEntity
+import com.rhymi.utils.DateExtensions
 import com.rhymi.viewmodel.HomeViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -156,7 +157,7 @@ fun DanceCard(classEntity: ClassEntity) {
         Column(
             modifier = Modifier.padding(12.dp)
         ) {
-            Text(classEntity.date?.let { convertMillisToDate(it) } ?: "")
+            Text(classEntity.date?.let { DateExtensions.convertMillisToDate(it) } ?: "")
             Text(classEntity.style, style = MaterialTheme.typography.titleMedium)
             Text("${classEntity.teacherName}")
             Text(classEntity.songName)

@@ -50,8 +50,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.rhymi.Utility.convertMillisToDate
 import com.rhymi.service.room.ClassEntity
+import com.rhymi.utils.DateExtensions
 import com.rhymi.viewmodel.AddClassViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -196,7 +196,7 @@ fun DatePickerFieldToModal(
         style = MaterialTheme.typography.bodySmall
     )
     OutlinedTextField(
-        value = selectedDate.value?.let { convertMillisToDate(it) } ?: "",
+        value = selectedDate.value?.let { DateExtensions.convertMillisToDate(it) } ?: "",
         onValueChange = { },
         placeholder = { Text("MM/DD/YYYY") },
         trailingIcon = {
